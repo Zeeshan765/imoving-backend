@@ -1,9 +1,10 @@
 {
-    "build": {
-      "builder": "NIXPACKS",
-      "buildCommand": "npm run build && npm run seed-prod"
+    "scripts": {
+      "seed-prod": "NODE_ENV=production node seed/seed-admin.js"
     },
-    "start": {
-      "cmd": "npm run start"
+    "deployments": {
+      "build": "npm run seed-prod",   
+      "start": "npm run start"        
     }
   }
+  
