@@ -27,7 +27,7 @@ const show = aysncMiddleware(async (req, res, next) => {
     .lean()
     .exec();
 
-  return successResponse(res, "User Found Successfully", {
+  return successResponse(res, "User found Successfully", {
     user,
   });
 });
