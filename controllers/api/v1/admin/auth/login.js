@@ -23,7 +23,7 @@ const login = aysncMiddleware(async (req, res, next) => {
     throw new CustomError(joiError(error));
   }
 
-  let admin = await User.findOne({ email: email.toLowerCase(), role: ["admin"] });
+  let admin = await User.findOne({ email: email.toLowerCase(), role: "admin" });
   if (!admin) {
     throw new CustomError("Admin not found");
   }
