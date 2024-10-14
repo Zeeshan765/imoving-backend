@@ -1,0 +1,9 @@
+{
+    "scripts": {
+      "seed-prod": "NODE_ENV=production node seed/seed-admin.js"
+    },
+    "deployments": {
+      "start": "npm run seed-prod"
+    }
+  }
+  
