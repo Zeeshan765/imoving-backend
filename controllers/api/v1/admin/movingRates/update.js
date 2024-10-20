@@ -7,14 +7,14 @@ const Moving = require('../../../../../models/moving');
 
 const update = aysncMiddleware(async (req, res, next) => {
 
-  const { _id } = req.params;
+  const { id } = req.params;
 
   const schema = Joi.object({
-    _id: Joi.string().hex().length(24).required(),
+    id: Joi.string().hex().length(24).required(),
   });
 
   const { error } = await joiValidate(schema, {
-    _id,
+    id,
   });
 
   if (error) {
@@ -22,9 +22,10 @@ const update = aysncMiddleware(async (req, res, next) => {
   }
 
    // Update the user in the database
-   const user = await Moving.findByIdAndUpdate(_id, req.body, { new: true, runValidators: true })
+   const user = await Moving.findByIdAndUpdate({ _id: id }, req.body, { new: true, runValidators: true })
    .lean()
    .exec();
+
 
   return successResponse(res, "Moving Rates Updated Successfully", {
     user,

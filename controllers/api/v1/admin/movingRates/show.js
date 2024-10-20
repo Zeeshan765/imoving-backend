@@ -7,14 +7,13 @@ const Moving = require('../../../../../models/moving');
 
 const show = aysncMiddleware(async (req, res, next) => {
 
-  const { _id } = req.params;
-
+  const { id } = req.params;
   const schema = Joi.object({
-    _id: Joi.string().hex().length(24).required(),
+    id: Joi.string().hex().length(24).required(),
   });
 
   const { error } = await joiValidate(schema, {
-    _id,
+    id,
   });
 
   if (error) {
@@ -22,7 +21,7 @@ const show = aysncMiddleware(async (req, res, next) => {
   }
 
   const user = await Moving.findOne({
-      _id,
+      _id:id,
     })
     .lean()
     .exec();
