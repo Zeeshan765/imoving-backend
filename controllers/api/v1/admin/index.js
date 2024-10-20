@@ -6,6 +6,13 @@ const update = require('./users/update')
 const shiplist = require('./shipment/list')
 const shipshow = require('./shipment/show')
 const shipupdate = require('./shipment/update')
+const sendPromotion = require('./promotion/sendPromotion')
+const movingCreate = require('./movingRates/create')
+const movingList = require('./movingRates/list')
+const movingShow = require('./movingRates/show')
+const movingUpdate = require('./movingRates/update')
+const movingDestroy = require('./movingRates/destroy')
+
 
 
 module.exports = {
@@ -16,5 +23,11 @@ module.exports = {
     list,
     shiplist,
     shipshow,
-    shipupdate
+    shipupdate,
+    sendPromotion,
+    movingCreate,
+    movingList,
+    movingShow,
+    movingUpdate,
+    movingDestroy
 }
