@@ -20,6 +20,7 @@ const list = aysncMiddleware(async (req, res, next) => {
     query.relocation_company = { $regex: relocation_company, $options: "i" };
   }
 
+  console.log('req.query', req.query)
 
   if (
     sort &&
@@ -37,6 +38,8 @@ const list = aysncMiddleware(async (req, res, next) => {
     .skip((page - 1) * perPage)
     .limit(perPage)
     .lean();
+
+    console.log('users', users)
 
   const count = await Moving.countDocuments(query);
   const pagyUsers = pagyRes(users, count, page, perPage);
