@@ -9,6 +9,9 @@
     "seed-dev": "NODE_ENV=development node seed/seed-admin.js",
     "seed-stag": "NODE_ENV=staging node seed/seed-admin.js",
     "seed-prod": "NODE_ENV=production node seed/seed-admin.js",
+    "rate-dev": "NODE_ENV=development node seed/seed-rate.js",
+    "rate-stag": "NODE_ENV=staging node seed/seed-rate.js",
+    "rate-prod": "NODE_ENV=production node seed/seed-rate.js",
     "prettier": "prettier --write \"**/*.js\""
   },
   "author": "Zeeshan Asharf",

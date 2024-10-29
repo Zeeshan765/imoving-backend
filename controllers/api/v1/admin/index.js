@@ -12,6 +12,7 @@ const movingList = require('./movingRates/list')
 const movingShow = require('./movingRates/show')
 const movingUpdate = require('./movingRates/update')
 const movingDestroy = require('./movingRates/destroy')
+const getTable = require('./rateTable/getTable')
 
 
 
@@ -29,5 +30,6 @@ module.exports = {
     movingList,
     movingShow,
     movingUpdate,
-    movingDestroy
+    movingDestroy,
+    getTable
 }

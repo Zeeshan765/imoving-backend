@@ -1,5 +1,5 @@
 const express = require('express')
-const { Adminlogin, destroy, update, show, list, shiplist, shipshow, shipupdate, sendPromotion, movingCreate, movingList, movingShow, movingDestroy, movingUpdate } = require('../controllers/api/v1/admin')
+const { Adminlogin, destroy, update, show, list, shiplist, shipshow, shipupdate, sendPromotion, movingCreate, movingList, movingShow, movingDestroy, movingUpdate, getTable } = require('../controllers/api/v1/admin')
 const admin = require('../middleware/admin')
 const authorization = require('../middleware/authorization')
 
@@ -19,6 +19,7 @@ app.post('/send-promotion', authorization, admin, sendPromotion)
 app.post('/moving-rates', authorization, admin, movingCreate)
 app.get('/moving-rates', authorization, admin, movingList)
 app.get('/moving-rate/:id', authorization, admin, movingShow)
+app.get('/rate-table', getTable)
 app.delete('/moving-rate/:id', authorization, admin, movingDestroy)
 app.put('/moving-rate/:id', authorization, admin, movingUpdate)
 
