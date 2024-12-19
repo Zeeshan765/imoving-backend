@@ -12,14 +12,14 @@ const rateSchema = new mongoose.Schema({
 });
 
 const originDestinationSchema = new mongoose.Schema({
-  origin: String,
   destination: String,
-  distance: Number
+  fairPrice: Number
 });
 
 const volumeConsultingSchema = new mongoose.Schema({
   volumeRange: String,
-  consultingFee: Number
+  device:String,
+  consultingFee: String
 });
 
 // Extra Service Schema
@@ -31,7 +31,7 @@ const extraServiceSchema = new mongoose.Schema({
 // Packing Schema
 const packingSchema = new mongoose.Schema({
   item: String,
-  pricePerCF: Number
+  price: Number
 });
 
 // Bulky Item Schema
@@ -43,7 +43,7 @@ const bulkyItemSchema = new mongoose.Schema({
 // Promotion Discount Schema
 const promotionDiscountSchema = new mongoose.Schema({
   type: String,
-  discount: Number
+  discount: String
 });
 
 // Storage Schema
